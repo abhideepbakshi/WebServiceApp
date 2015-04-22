@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Index page configuration -->
+
+	<definition name="login" template="/WEB-INF/pages/login.jsp" />
+
+	<!-- Admin page for dashboard configuration -->
+
+	<definition name="admin.dashboard.definition" template="/WEB-INF/pages/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/pages/include/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/pages/include/dashboard_menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/pages/include/footer.jsp" />
+	</definition>
+
+
+<!-- 		Dashboard Details 								 -->
+	<definition name="admin.dashboard" extends="admin.dashboard.definition">
+		<put-attribute name="title" value="Payroll System" />
+		<put-attribute name="body" value="/WEB-INF/pages/dashboard_body.jsp" />
+	</definition>
+
+<!-- 		Company Details 								 -->	
+	<definition name="admin.addCompany" extends="admin.dashboard.definition">
+		<put-attribute name="title" value="Payroll System" />
+		<put-attribute name="body" value="/WEB-INF/pages/company/addCompany.jsp" />
+	</definition>
+
+	<definition name="admin.viewCompany" extends="admin.dashboard.definition">
+		<put-attribute name="title" value="Payroll System" />
+		<put-attribute name="body" value="/WEB-INF/pages/company/viewCompany.jsp" />
+	</definition>
+	
+<!-- 		Buyer Details 								 -->	
+	<definition name="admin.addBuyer" extends="admin.dashboard.definition">
+		<put-attribute name="title" value="Payroll System" />
+		<put-attribute name="body" value="/WEB-INF/pages/buyer/addBuyer.jsp" />
+	</definition>	
+
+	<!-- 		Item Details 								 -->	
+	<definition name="admin.addProduct" extends="admin.dashboard.definition">
+		<put-attribute name="title" value="Payroll System" />
+		<put-attribute name="body" value="/WEB-INF/pages/product/addProduct.jsp" />
+	</definition>	
+
+
+</tiles-definitions>
