@@ -8,7 +8,7 @@ import java.util.Properties;
 
 import com.microsys.app.config.util.ConfigException;
 
-public class PropertyFile implements Provider<Properties, String> {
+public class PropertyFile implements Provider<Properties, String, String> {
 
 	private final Properties propertyList = new Properties();
 

@@ -2,8 +2,8 @@ package com.microsys.app.config.loader;
 
 import com.microsys.app.config.util.ConfigException;
 
-public interface Loader<FT, RT> {
+public interface Loader<FT, RQ, RS> {
 
-	RT getProperty(String propertyName, String filename) throws ConfigException;
+	RS getProperty(RQ propertyName, String filename) throws ConfigException;
 
 }

@@ -8,6 +8,7 @@ public class LogConfigTest {
 
 	@Test
 	public void loadLogger(){
+		System.out.println("hello");
 		LogConfig config = new LogConfig();
 		
 		try {

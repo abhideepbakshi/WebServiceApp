@@ -1,1 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
+<application-error xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="error.xsd" lang="US">
+  	
+	<service name="LoginService">
+		<errorType name="validation-error">
+			<error name="LoginPasswordError" errorNum="10001">
+			  <description>Password contain only Alphabate,Numeric Only</description>
+			  <errorCode>com.microsys.label.login.password.error</errorCode>
+			</error>
+			<error name="LoginUsernameError" errorNum="10002">
+			  <description>User Name contain only Alphabate,Numeric,_ Only</description>
+			  <errorCode>com.microsys.label.login.username.error</errorCode>
+			</error>
+			<error name="LoginError" errorNum="10003">
+			  <description>Username and Password is incorrect</description>
+			  <errorCode>com.microsys.label.login.error</errorCode>
+			</error>
+		</errorType>
+	</service>
+</application-error>
+	

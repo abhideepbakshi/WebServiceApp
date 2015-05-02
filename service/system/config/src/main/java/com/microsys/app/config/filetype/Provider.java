@@ -4,10 +4,10 @@ import java.io.InputStream;
 
 import com.microsys.app.config.util.ConfigException;
 
-public interface Provider<F,RT> {
+public interface Provider<F, RQ, RS> {
 
 	public F initialize(InputStream file) throws ConfigException;
 	
-	public RT getProperty(String property) throws ConfigException;
+	public RS getProperty(RQ propertyName) throws ConfigException;
 }
 

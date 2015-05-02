@@ -6,7 +6,7 @@ import com.microsys.app.config.filetype.PropertyFile;
 import com.microsys.app.config.loader.PropertyLoader;
 import com.microsys.app.config.util.ConfigException;
 
-public class LogConfig extends PropertyLoader<Properties, String, PropertyFile> {
+public class LogConfig extends PropertyLoader<Properties, String, String, PropertyFile> {
 
 	private final static String LOGGER_CONFIG = "log-configuration.xml";
 

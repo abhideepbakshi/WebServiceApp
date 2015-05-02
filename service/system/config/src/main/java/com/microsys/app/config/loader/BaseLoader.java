@@ -4,13 +4,13 @@ import com.microsys.app.config.filetype.Provider;
 
 public class BaseLoader {
 
-	private Provider<?, ?> provider;
+	private Provider<Object, Object, Object> provider;
 
-	public Provider<?, ?> getProvider() {
+	public Provider<Object, Object, Object> getProvider() {
 		return provider;
 	}
 
-	public void setProvider(Provider<?, ?> provider) {
+	public void setProvider(Provider<Object, Object, Object> provider) {
 		this.provider = provider;
 	}
 

@@ -1,19 +1,46 @@
 package com.microsys.app.config.error;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ErrorMessage {
 
-	final List<String> errorList = new ArrayList<String>();
+	private String serviceName;
+	private String errorType;
+	private int errorNum;
+	private String description;
+	private String errorCode;
 	
-	public void setErrorKey(String key) {
-
-		errorList.add(key);
+	public String getServiceName() {
+		return serviceName;
+	}
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+	}
+	public String getErrorType() {
+		return errorType;
+	}
+	public void setErrorType(String errorType) {
+		this.errorType = errorType;
+	}
+	public int getErrorNum() {
+		return errorNum;
+	}
+	public void setErrorNum(int errorNum) {
+		this.errorNum = errorNum;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getErrorCode() {
+		return errorCode;
+	}
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 	
-	public List<String> getErrorList() {
-		return errorList;
-	}
+	
+	
 	
 }

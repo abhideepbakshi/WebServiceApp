@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+http://www.javaworld.com/article/2075952/java-xml/use-xml-data-binding-to-do-your-laundry.html
+http://www.liquid-technologies.com/Tutorials/XmlSchemas/XsdTutorial_04.aspx
+http://www.w3schools.com/schema/el_simpletype.asp
+http://www.utilities-online.info/xsdvalidation/#.VT4F1eboT0w
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:simpleType name="language">
+	<xsd:restriction base="xsd:string">
+		<xsd:minLength value="2"/>
+		<xsd:maxLength value="3"/>
+		<xsd:pattern value="[A-Za-z]{0,3}"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="errCode">
+	<xsd:restriction base="xsd:integer">
+		<xsd:totalDigits value="9"/>
+                <xsd:minInclusive value="10000"/>
+                <xsd:maxInclusive value="40000" />
+	</xsd:restriction>
+</xsd:simpleType>
+
+
+
+<xsd:element name="error">
+	<xsd:complexType>
+	  	<xsd:sequence>
+			<xsd:element name="description" type="xsd:string"/>
+			<xsd:element name="errorCode"  type="xsd:string" />
+		</xsd:sequence>
+		<xsd:attribute name="errorNum" type="errCode" use="required" />
+		<xsd:attribute name="name" type="xsd:string" use="required" />	
+ 	</xsd:complexType>
+</xsd:element>
+
+
+<xsd:element name="errorType">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="error" maxOccurs="unbounded" />
+		</xsd:sequence>	
+		<xsd:attribute name="name" type="xsd:string" use="required" />			
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="service">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="errorType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string" use="required" />	
+	</xsd:complexType>
+</xsd:element>
+
+
+
+<xsd:element name="application-error">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="service" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		       <xsd:attribute name="lang" type="language" use="required"/>
+       </xsd:complexType>	
+</xsd:element>
+
+
+</xsd:schema>
