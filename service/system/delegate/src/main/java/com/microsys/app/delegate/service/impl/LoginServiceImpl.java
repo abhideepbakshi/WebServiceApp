@@ -1,6 +1,5 @@
 package com.microsys.app.delegate.service.impl;
 
-import org.omg.CORBA.portable.ApplicationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -8,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
+import com.microsys.app.common.exception.ApplicationException;
 import com.microsys.app.delegate.service.ILoginService;
 import com.microsys.app.delegate.validator.LoginValidation;
 import com.microsys.app.model.dao.ILoginSearchDao;
@@ -34,6 +34,15 @@ public class LoginServiceImpl implements ILoginService {
 			}
 		}
 
+	}
+	
+	@Override
+	public boolean validateLoginWs(LoginDto login) throws ApplicationException{
+		if (!checkCredential(login)) {
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED)

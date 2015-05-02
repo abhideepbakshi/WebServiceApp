@@ -1,6 +1,6 @@
 package com.microsys.app.service.controller;
 
-import org.omg.CORBA.portable.ApplicationException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.microsys.app.common.exception.ApplicationException;
 import com.microsys.app.delegate.service.ILoginService;
 import com.microsys.app.model.dto.LoginDto;
 
